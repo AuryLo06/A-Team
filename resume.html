@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resume and professional background of my academic and technical experience.">
-  <title>Resume | Personal Portfolio</title>
+  <meta name="description" content="Resume of Auryona Lomas - Information Systems & Analytics student at LSU with concentration in Cyber Risk.">
+  <title>Resume | Auryona Lomas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
   <!-- Navigation Bar -->
   <header>
     <div class="nav-container">
-      <a href="index.html" class="brand">My<span>Portfolio</span></a>
+      <a href="index.html" class="brand">Auryona<span>Lomas</span></a>
       <nav aria-label="Main Navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -28,25 +28,42 @@
 
   <!-- Main Content -->
   <main>
-    <section class="resume-header">
-      <h1>Resume</h1>
-      <p style="color: var(--text-light); margin-bottom: 2rem;">
-        An overview of my academic background, technical proficiencies, and work experience.
-      </p>
+    <!-- Resume Header Profile Card -->
+    <section class="resume-header-card">
+      <div class="resume-profile-info">
+        <h1>Auryona Lomas</h1>
+        <p class="resume-profile-tagline">Information Systems &amp; Analytics &bull; Cyber Risk Concentration &bull; LSU</p>
+        <div class="resume-contact-bar">
+          <span class="resume-contact-item">
+            <span class="icon">&#128205;</span> Baton Rouge, LA
+          </span>
+          <a href="tel:2252527060" class="resume-contact-item">
+            <span class="icon">&#128222;</span> (225) 252-7060
+          </a>
+          <a href="mailto:Auryona.Lomas@outlook.com" class="resume-contact-item">
+            <span class="icon">&#9993;</span> Auryona.Lomas@outlook.com
+          </a>
+        </div>
+      </div>
+      <div class="resume-actions no-print">
+        <button onclick="window.print()" class="btn btn-secondary">
+          <span>&#128438;</span> Print / Save PDF
+        </button>
+      </div>
     </section>
 
     <!-- Education Section -->
     <section class="resume-section" id="education">
       <h2>Education</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3 class="timeline-title">Bachelor of Science in Information Systems &amp; Decision Sciences</h3>
-          <p class="timeline-subtitle">Louisiana State University | Baton Rouge, LA</p>
-          <span class="timeline-date">Expected Graduation: 2027</span>
-          <p>
-            Relevant Coursework: ISDS 3100, Systems Analysis &amp; Design, Database Management Systems, 
-            Business Data Communications, and Web Development.
-          </p>
+      <div class="education-card">
+        <div class="education-main">
+          <h3>Information Systems and Analytics with a concentration in Cyber Risk</h3>
+          <p class="education-school">Louisiana State University (LSU), Baton Rouge, LA</p>
+          <p class="education-minor"><strong>Minor:</strong> Internal Auditing</p>
+        </div>
+        <div class="education-meta">
+          <span class="timeline-date">Graduation: December 2028</span>
+          <span class="badge-gpa">GPA: 3.02</span>
         </div>
       </div>
     </section>
@@ -55,46 +72,101 @@
     <section class="resume-section" id="experience">
       <h2>Experience</h2>
       <div class="timeline">
+
+        <!-- Position 1 -->
         <div class="timeline-item">
-          <h3 class="timeline-title">Student Analyst / Project Contributor</h3>
-          <p class="timeline-subtitle">Academic &amp; Independent Projects</p>
-          <span class="timeline-date">2024 &ndash; Present</span>
-          <p>
-            Designed, implemented, and deployed responsive web solutions adhering to modern web standards. 
-            Utilized version control (Git &amp; GitHub) to track project progress and collaborate effectively.
-          </p>
+          <h3 class="timeline-title">Membership Assistant</h3>
+          <p class="timeline-subtitle">Law Enforcement Enterprise Portal / Louisiana State University, Baton Rouge, LA</p>
+          <span class="timeline-date">April 2026 &ndash; Present</span>
+          <ul class="resume-list">
+            <li>Process and review membership applications to verify accuracy, completeness, and eligibility</li>
+            <li>Perform high volume data entry using IBM Identity Manager while keeping an elevated level of accuracy</li>
+            <li>Identify missing or inconsistent information and resolve errors before processing applications</li>
+            <li>Maintain confidentiality when handling sensitive personal account information</li>
+          </ul>
         </div>
+
+        <!-- Position 2 -->
         <div class="timeline-item">
-          <h3 class="timeline-title">Leadership &amp; Campus Involvement</h3>
-          <p class="timeline-subtitle">Student Organizations</p>
-          <span class="timeline-date">2023 &ndash; Present</span>
-          <p>
-            Collaborated in cross-functional student teams, organized events, and participated in professional 
-            development workshops.
-          </p>
+          <h3 class="timeline-title">Senior Technical Support Operator</h3>
+          <p class="timeline-subtitle">Law Enforcement Enterprise Portal / Louisiana State University, Baton Rouge, LA</p>
+          <span class="timeline-date">July 2024 &ndash; April 2026</span>
+          <ul class="resume-list">
+            <li>Provided technical support to users by resolving issues related to the Law Enforcement Enterprise Portal through phone and email while documenting</li>
+            <li>Guided users through troubleshooting techniques to diagnose and resolve technical issues</li>
+            <li>Handled sensitive user information by following security and confidentiality policies</li>
+            <li>Train new team members in operational procedures and customer service practices</li>
+            <li>Lead weekly team meetings to communicate updates, policies, and process involvement</li>
+          </ul>
         </div>
+
+        <!-- Position 3 -->
+        <div class="timeline-item">
+          <h3 class="timeline-title">Computer Repair</h3>
+          <span class="timeline-date">July 2020 &ndash; April 2026</span>
+          <ul class="resume-list">
+            <li>Completed house calls to troubleshoot and assist customers with any issues they had with their devices</li>
+            <li>Assembled and sold desktop computers that required extensive research and planning to accommodate customers budget and needed specifications</li>
+          </ul>
+        </div>
+
+        <!-- Position 4 -->
+        <div class="timeline-item">
+          <h3 class="timeline-title">Intern</h3>
+          <p class="timeline-subtitle">East Baton Rouge Career and Technical Education Center, Baton Rouge, LA</p>
+          <span class="timeline-date">July 2023 &ndash; July 2024</span>
+          <ul class="resume-list">
+            <li>Assisted with finding and preparing documents for yearly audit</li>
+            <li>Created an organization system for all the documents received and created</li>
+            <li>Handled daily calls and in person inquiries from teachers, parents, and students</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
     <!-- Skills Section -->
     <section class="resume-section" id="skills">
-      <h2>Technical &amp; Professional Skills</h2>
+      <h2>Skills &amp; Technical Tools</h2>
       <div class="skills-list">
-        <div class="skill-chip">HTML5</div>
-        <div class="skill-chip">CSS3</div>
-        <div class="skill-chip">JavaScript</div>
-        <div class="skill-chip">Git &amp; GitHub</div>
-        <div class="skill-chip">SQL / Databases</div>
-        <div class="skill-chip">Data Analysis</div>
-        <div class="skill-chip">Problem Solving</div>
-        <div class="skill-chip">Responsive Web Design</div>
+        <span class="skill-chip">MySQL</span>
+        <span class="skill-chip">ERD plus</span>
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">Microsoft VS Code</span>
+        <span class="skill-chip">Jira</span>
+        <span class="skill-chip">IBM Identity Manager</span>
+        <span class="skill-chip">Introductory Excel Certification</span>
+        <span class="skill-chip">Data Modeling</span>
+        <span class="skill-chip">GitHub</span>
       </div>
     </section>
+
+    <!-- Involvement Section -->
+    <section class="resume-section" id="involvement">
+      <h2>Involvement &amp; Leadership</h2>
+      <div class="involvement-grid">
+        <div class="involvement-card">
+          <div class="involvement-icon">&#127945;</div>
+          <div class="involvement-info">
+            <h4>LSU Women’s Rugby Recruitment Chair</h4>
+            <p>Leadership, recruiting, and collegiate team coordination</p>
+          </div>
+        </div>
+        <div class="involvement-card">
+          <div class="involvement-icon">&#129309;</div>
+          <div class="involvement-info">
+            <h4>BREC Volunteer</h4>
+            <p>Community engagement and local recreational service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 My Portfolio. Built with semantic HTML &amp; CSS.</p>
+    <p>&copy; 2026 Auryona Lomas. Built with semantic HTML &amp; CSS.</p>
   </footer>
 
 </body>

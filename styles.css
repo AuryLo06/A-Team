@@ -1,6 +1,6 @@
 /* ==========================================================================
-   LSU Dark / Black Themed Design System
-   Colors: Pitch Black (#0a090e), LSU Purple (#8b44e6 / #461D7C),
+   LSU Dark / Pitch Black Themed Design System
+   Colors: Pitch Black (#000000), LSU Purple (#9955f8 / #461D7C),
            LSU Yellow/Gold (#FDD023), and Crisp White (#ffffff)
    ========================================================================== */
 
@@ -22,20 +22,20 @@
   --white: #ffffff;
   --white-muted: #e2e0ea;
   
-  /* Dark / Black Backgrounds */
-  --bg: #09080d;                 /* Deep black page background */
-  --card-bg: #13111a;            /* Elevated obsidian black card surface */
-  --card-bg-hover: #1a1724;      /* Card hover surface */
+  /* Pitch Black Backgrounds & Obsidian Surfaces */
+  --bg: #000000;                 /* True Pitch Black page background */
+  --card-bg: #0c0b10;            /* Elevated obsidian black card surface */
+  --card-bg-hover: #15131c;      /* Card hover surface */
   --dark: #ffffff;               /* Headings are crisp bright white */
-  --text: #d4cfdf;               /* Clean readable silver text */
-  --text-light: #9f99ad;         /* Muted secondary text */
-  --border: #262133;             /* Subtle dark purple-slate border */
-  --border-light: #3d3550;       /* Lighter border for hover/focus */
+  --text: #dcd8e6;               /* Clean readable silver text */
+  --text-light: #9d97ab;         /* Muted secondary text */
+  --border: #201d2c;             /* Subtle dark border */
+  --border-light: #363148;       /* Lighter border for hover/focus */
   
   /* Shadows & Glows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.6);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 10px rgba(153, 85, 248, 0.1);
-  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.85), 0 0 16px rgba(153, 85, 248, 0.22);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.85);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.9), 0 0 10px rgba(153, 85, 248, 0.12);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.95), 0 0 16px rgba(153, 85, 248, 0.22);
   --radius: 12px;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -47,9 +47,14 @@
   padding: 0;
 }
 
+html {
+  background-color: #000000;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
-  background-color: var(--bg);
+  background-color: #000000;
   color: var(--text);
   line-height: 1.65;
   min-height: 100vh;
@@ -62,14 +67,14 @@ body {
    ========================================================================== */
 
 header {
-  background: rgba(12, 10, 18, 0.92);
+  background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(14px);
   position: sticky;
   top: 0;
   z-index: 1000;
   border-top: 4px solid var(--primary-bg);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
 }
 
 .nav-container {
@@ -180,7 +185,7 @@ p {
 
 .hero {
   padding: 4rem 2.5rem;
-  background: linear-gradient(135deg, #13101c 0%, #191427 55%, #16141c 100%);
+  background: linear-gradient(135deg, #07060a 0%, #110d1a 55%, #050508 100%);
   border: 1px solid var(--border);
   border-left: 6px solid var(--primary);
   border-radius: var(--radius);
@@ -377,7 +382,7 @@ p {
   height: 12px;
   border-radius: 50%;
   background: var(--primary);
-  border: 3px solid #13111a;
+  border: 3px solid #000000;
   box-shadow: 0 0 0 2px var(--secondary), 0 0 8px rgba(253, 208, 35, 0.4);
 }
 
@@ -406,6 +411,206 @@ p {
   border: 1px solid rgba(253, 208, 35, 0.4);
 }
 
+/* Resume Bullet Lists */
+.resume-list {
+  list-style: none;
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.resume-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.resume-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: -0.05rem;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* Resume Profile Header Card */
+.resume-header-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--secondary);
+  border-radius: var(--radius);
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.resume-profile-info h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.35rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.resume-profile-tagline {
+  color: var(--primary-hover);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+}
+
+.resume-contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.resume-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.resume-contact-item:hover {
+  color: var(--secondary);
+}
+
+.resume-contact-item .icon {
+  color: var(--secondary);
+  font-size: 1.05rem;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Education Highlight Card */
+.education-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.education-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.education-main h3 {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.education-school {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.education-minor {
+  color: var(--text-light);
+  font-size: 0.92rem;
+}
+
+.education-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.badge-gpa {
+  background: var(--secondary-light);
+  color: var(--secondary);
+  border: 1px solid rgba(253, 208, 35, 0.45);
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 10px rgba(253, 208, 35, 0.15);
+}
+
+/* Involvement Cards */
+.involvement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.involvement-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.involvement-card:hover {
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.involvement-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--primary-light);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 1px solid rgba(153, 85, 248, 0.3);
+  flex-shrink: 0;
+}
+
+.involvement-info h4 {
+  font-size: 1.05rem;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.involvement-info p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -417,7 +622,7 @@ p {
   background: var(--card-bg);
   border: 1px solid var(--border);
   color: var(--white);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.1rem;
   border-radius: 8px;
   font-weight: 500;
   font-size: 0.9rem;
@@ -440,12 +645,86 @@ p {
 footer {
   margin-top: auto;
   border-top: 1px solid var(--border);
-  background: #09080d;
+  background: #000000;
   padding: 2rem;
   text-align: center;
   color: var(--text-light);
   font-size: 0.9rem;
   border-bottom: 4px solid var(--secondary);
+}
+
+/* ==========================================================================
+   Print Styles (Optimized Clean Export)
+   ========================================================================== */
+
+@media print {
+  header, footer, .resume-actions, .no-print {
+    display: none !important;
+  }
+
+  body, html {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .resume-header-card, .education-card, .involvement-card, .card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  h1, h2, h3, h4, .timeline-title {
+    color: #000000 !important;
+  }
+
+  h2::after {
+    display: none !important;
+  }
+
+  .timeline {
+    border-left: 2px solid #ccc !important;
+    padding-left: 1rem !important;
+  }
+
+  .timeline-item::before {
+    background: #333333 !important;
+    border-color: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .timeline-subtitle, .timeline-date, .resume-contact-item {
+    color: #333333 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .resume-list li {
+    color: #222222 !important;
+  }
+
+  .resume-list li::before {
+    color: #000000 !important;
+  }
+
+  .skill-chip {
+    background: #f4f4f4 !important;
+    color: #111111 !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+
+  .badge-gpa {
+    background: #f0f0f0 !important;
+    color: #000000 !important;
+    border: 1px solid #999999 !important;
+  }
 }
 
 /* ==========================================================================
@@ -464,5 +743,21 @@ footer {
 
   h1 {
     font-size: 2rem;
+  }
+
+  .resume-header-card {
+    padding: 1.5rem;
+  }
+
+  .resume-profile-info h1 {
+    font-size: 2rem;
+  }
+
+  .education-card {
+    padding: 1.25rem;
+  }
+
+  .education-meta {
+    align-items: flex-start;
   }
 }
