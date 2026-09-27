@@ -1,29 +1,41 @@
 /* ==========================================================================
-   LSU Themed Design System & Global Styles
-   Official Colors: LSU Purple (#461D7C) & LSU Gold (#FDD023)
+   LSU Dark / Black Themed Design System
+   Colors: Pitch Black (#0a090e), LSU Purple (#8b44e6 / #461D7C),
+           LSU Yellow/Gold (#FDD023), and Crisp White (#ffffff)
    ========================================================================== */
 
 :root {
-  /* LSU Brand Colors */
-  --primary: #461D7C;            /* LSU Deep Royal Purple */
-  --primary-hover: #361460;      /* Darker Purple for hover */
-  --primary-light: #f5f0fa;      /* Soft Purple Tint for backgrounds/badges */
-  --secondary: #FDD023;          /* LSU Vibrant Gold */
-  --secondary-hover: #e5bc14;    /* Warm Gold Hover */
-  --secondary-light: #fffdf0;    /* Soft Gold Tint */
-  --accent: #FDD023;             /* LSU Gold Accent */
-  --accent-text: #8c6700;        /* High-contrast Gold for readable text */
+  /* LSU Purple Accents */
+  --primary: #9955f8;            /* Vibrant Purple for text/icons on dark bg */
+  --primary-hover: #b074ff;      /* Lighter Purple hover */
+  --primary-bg: #461D7C;         /* Official Deep LSU Purple for solid fills */
+  --primary-light: rgba(153, 85, 248, 0.14); /* Purple glow tint */
   
-  /* Neutrals */
-  --dark: #1b1226;               /* Dark Slate with subtle purple undertone */
-  --text: #373344;               /* Charcoal text */
-  --text-light: #6a6478;         /* Muted text */
-  --bg: #fbf9fc;                 /* Clean light page background with hint of warmth */
-  --card-bg: #ffffff;
-  --border: #e9e3f0;             /* Soft purple-gray border */
-  --shadow-sm: 0 1px 3px rgba(70, 29, 124, 0.06);
-  --shadow-md: 0 4px 8px -1px rgba(70, 29, 124, 0.08), 0 2px 4px -2px rgba(253, 208, 35, 0.06);
-  --shadow-lg: 0 12px 20px -4px rgba(70, 29, 124, 0.12), 0 4px 8px -2px rgba(253, 208, 35, 0.1);
+  /* LSU Yellow / Gold Accents */
+  --secondary: #FDD023;          /* Official Vibrant LSU Gold */
+  --secondary-hover: #ffe266;    /* Bright Gold hover */
+  --secondary-light: rgba(253, 208, 35, 0.14); /* Warm gold glow */
+  --accent: #FDD023;             /* LSU Gold accent */
+  --accent-text: #FDD023;        /* High-contrast Gold text */
+  
+  /* White Accents */
+  --white: #ffffff;
+  --white-muted: #e2e0ea;
+  
+  /* Dark / Black Backgrounds */
+  --bg: #09080d;                 /* Deep black page background */
+  --card-bg: #13111a;            /* Elevated obsidian black card surface */
+  --card-bg-hover: #1a1724;      /* Card hover surface */
+  --dark: #ffffff;               /* Headings are crisp bright white */
+  --text: #d4cfdf;               /* Clean readable silver text */
+  --text-light: #9f99ad;         /* Muted secondary text */
+  --border: #262133;             /* Subtle dark purple-slate border */
+  --border-light: #3d3550;       /* Lighter border for hover/focus */
+  
+  /* Shadows & Glows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 10px rgba(153, 85, 248, 0.1);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.85), 0 0 16px rgba(153, 85, 248, 0.22);
   --radius: 12px;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -50,14 +62,14 @@ body {
    ========================================================================== */
 
 header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+  background: rgba(12, 10, 18, 0.92);
+  backdrop-filter: blur(14px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-top: 4px solid var(--primary);
+  border-top: 4px solid var(--primary-bg);
   border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
 }
 
 .nav-container {
@@ -72,7 +84,7 @@ header {
 .brand {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--white);
   text-decoration: none;
   letter-spacing: -0.02em;
   display: flex;
@@ -81,11 +93,9 @@ header {
 }
 
 .brand span {
-  color: var(--accent-text);
-  background: linear-gradient(135deg, #e5bc14, #c99c00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--secondary);
   font-weight: 800;
+  text-shadow: 0 0 12px rgba(253, 208, 35, 0.4);
 }
 
 nav ul {
@@ -96,7 +106,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: var(--text-light);
+  color: var(--white-muted);
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -105,12 +115,12 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--primary);
+  color: var(--white);
   background: var(--primary-light);
 }
 
 nav a.active {
-  color: var(--primary);
+  color: var(--secondary);
   background: var(--primary-light);
   font-weight: 600;
   box-shadow: inset 0 -2px 0 var(--secondary);
@@ -129,7 +139,7 @@ main {
 }
 
 h1, h2, h3, h4 {
-  color: var(--dark);
+  color: var(--white);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -147,7 +157,7 @@ h2 {
   display: inline-block;
 }
 
-/* LSU Purple to Gold Accent bar under section headings */
+/* Purple to Gold accent bar under section headings */
 h2::after {
   content: '';
   position: absolute;
@@ -157,6 +167,7 @@ h2::after {
   height: 4px;
   background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   border-radius: 2px;
+  box-shadow: 0 0 8px rgba(253, 208, 35, 0.35);
 }
 
 p {
@@ -169,12 +180,12 @@ p {
 
 .hero {
   padding: 4rem 2.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #faf6fd 60%, #fffdf4 100%);
+  background: linear-gradient(135deg, #13101c 0%, #191427 55%, #16141c 100%);
   border: 1px solid var(--border);
   border-left: 6px solid var(--primary);
   border-radius: var(--radius);
   margin-bottom: 3rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -186,11 +197,11 @@ p {
 .hero::after {
   content: '';
   position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(253, 208, 35, 0.25) 0%, transparent 70%);
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(253, 208, 35, 0.2) 0%, rgba(153, 85, 248, 0.15) 50%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -200,16 +211,16 @@ p {
   padding: 0.35rem 0.9rem;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--secondary);
   background-color: var(--secondary-light);
   border-radius: 9999px;
-  border: 1px solid rgba(253, 208, 35, 0.5);
-  box-shadow: 0 1px 3px rgba(253, 208, 35, 0.2);
+  border: 1px solid rgba(253, 208, 35, 0.45);
+  box-shadow: 0 0 10px rgba(253, 208, 35, 0.15);
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: var(--text-light);
+  color: var(--text);
   max-width: 650px;
 }
 
@@ -230,31 +241,33 @@ p {
   border: none;
 }
 
-/* Primary Button: LSU Purple */
+/* Primary Button: LSU Purple with crisp White text */
 .btn-primary {
-  background-color: var(--primary);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(70, 29, 124, 0.28);
+  background-color: var(--primary-bg);
+  color: var(--white);
+  border: 1px solid var(--primary);
+  box-shadow: 0 4px 14px rgba(153, 85, 248, 0.35);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: #58249c;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(70, 29, 124, 0.38);
+  box-shadow: 0 6px 20px rgba(153, 85, 248, 0.5);
+  color: var(--white);
 }
 
-/* Secondary Button: LSU Gold accent */
+/* Secondary Button: LSU Yellow / Gold */
 .btn-secondary {
   background-color: var(--secondary);
-  color: var(--primary);
+  color: #120921;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(253, 208, 35, 0.3);
+  box-shadow: 0 4px 14px rgba(253, 208, 35, 0.35);
 }
 
 .btn-secondary:hover {
   background-color: var(--secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(253, 208, 35, 0.45);
+  box-shadow: 0 6px 20px rgba(253, 208, 35, 0.55);
 }
 
 /* ==========================================================================
@@ -282,9 +295,10 @@ p {
 }
 
 .card:hover {
+  background: var(--card-bg-hover);
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(70, 29, 124, 0.35);
+  border-color: var(--primary);
 }
 
 .card-header {
@@ -296,7 +310,7 @@ p {
 
 .card-title {
   font-size: 1.25rem;
-  color: var(--dark);
+  color: var(--white);
 }
 
 .badge {
@@ -306,7 +320,7 @@ p {
   border-radius: 6px;
   background-color: var(--primary-light);
   color: var(--primary);
-  border: 1px solid rgba(70, 29, 124, 0.12);
+  border: 1px solid rgba(153, 85, 248, 0.35);
 }
 
 .card-body {
@@ -323,12 +337,13 @@ p {
 }
 
 .tag {
-  background: var(--primary-light);
-  color: var(--primary);
+  background: var(--secondary-light);
+  color: var(--secondary);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.55rem;
   border-radius: 4px;
+  border: 1px solid rgba(253, 208, 35, 0.3);
 }
 
 /* ==========================================================================
@@ -352,7 +367,7 @@ p {
   position: relative;
 }
 
-/* Timeline dot: Purple with Gold glowing ring */
+/* Timeline dot: Purple with glowing Gold ring */
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -362,19 +377,19 @@ p {
   height: 12px;
   border-radius: 50%;
   background: var(--primary);
-  border: 3px solid #ffffff;
-  box-shadow: 0 0 0 2px var(--secondary);
+  border: 3px solid #13111a;
+  box-shadow: 0 0 0 2px var(--secondary), 0 0 8px rgba(253, 208, 35, 0.4);
 }
 
 .timeline-title {
   font-size: 1.15rem;
   margin-bottom: 0.25rem;
-  color: var(--primary);
+  color: var(--white);
 }
 
 .timeline-subtitle {
   font-weight: 600;
-  color: var(--dark);
+  color: var(--primary);
   font-size: 0.95rem;
   margin-bottom: 0.4rem;
 }
@@ -382,7 +397,7 @@ p {
 .timeline-date {
   display: inline-block;
   font-size: 0.85rem;
-  color: var(--accent-text);
+  color: var(--secondary);
   background-color: var(--secondary-light);
   padding: 0.15rem 0.55rem;
   border-radius: 4px;
@@ -399,9 +414,9 @@ p {
 }
 
 .skill-chip {
-  background: #ffffff;
+  background: var(--card-bg);
   border: 1px solid var(--border);
-  color: var(--dark);
+  color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-weight: 500;
@@ -411,10 +426,11 @@ p {
 }
 
 .skill-chip:hover {
-  border-color: var(--primary);
-  background: var(--primary-light);
-  color: var(--primary);
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: var(--secondary-light);
   transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(253, 208, 35, 0.25);
 }
 
 /* ==========================================================================
@@ -424,7 +440,7 @@ p {
 footer {
   margin-top: auto;
   border-top: 1px solid var(--border);
-  background: #ffffff;
+  background: #09080d;
   padding: 2rem;
   text-align: center;
   color: var(--text-light);
