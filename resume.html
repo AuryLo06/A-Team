@@ -35,20 +35,18 @@
         <p class="resume-profile-tagline">Information Systems &amp; Analytics &bull; Cyber Risk Concentration &bull; LSU</p>
         <div class="resume-contact-bar">
           <span class="resume-contact-item">
-            <span class="icon">&#128205;</span> Baton Rouge, LA
+            Baton Rouge, LA
           </span>
           <a href="tel:2252527060" class="resume-contact-item">
-            <span class="icon">&#128222;</span> (225) 252-7060
+            (225) 252-7060
           </a>
           <a href="mailto:Auryona.Lomas@outlook.com" class="resume-contact-item">
-            <span class="icon">&#9993;</span> Auryona.Lomas@outlook.com
+            Auryona.Lomas@outlook.com
           </a>
         </div>
       </div>
       <div class="resume-actions no-print">
-        <button onclick="window.print()" class="btn btn-secondary">
-          <span>&#128438;</span> Print / Save PDF
-        </button>
+        <button onclick="window.print()" class="btn btn-secondary">Print / Save PDF</button>
       </div>
     </section>
 
@@ -128,16 +126,30 @@
     <!-- Skills Section -->
     <section class="resume-section" id="skills">
       <h2>Skills &amp; Technical Tools</h2>
+      <p class="skills-hint">Click a skill to see more details.</p>
       <div class="skills-list">
-        <span class="skill-chip">MySQL</span>
-        <span class="skill-chip">ERD plus</span>
-        <span class="skill-chip">Python</span>
-        <span class="skill-chip">Microsoft VS Code</span>
-        <span class="skill-chip">Jira</span>
-        <span class="skill-chip">IBM Identity Manager</span>
-        <span class="skill-chip">Introductory Excel Certification</span>
-        <span class="skill-chip">Data Modeling</span>
-        <span class="skill-chip">GitHub</span>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Writing SQL queries to create, query, and manage relational databases, including joins, filtering, and aggregate reporting.">MySQL</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Designing entity-relationship diagrams to plan a database's entities, attributes, keys, and relationships before building it in MySQL.">ERD plus</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Writing scripts for data handling and automation using variables, loops, functions, and file processing.">Python</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="My main code editor for building this website and writing Python and SQL, including its built-in Git integration.">Microsoft VS Code</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Tracking tasks and tickets in an agile workflow: creating issues, updating their status, and following work across a board.">Jira</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Used as a Membership Assistant for high-volume data entry and account management on the Law Enforcement Enterprise Portal, with a focus on accuracy.">IBM Identity Manager</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Certified in core Excel skills: formulas and functions, formatting, sorting and filtering, and building basic charts.">Introductory Excel Certification</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Turning business requirements into structured data designs by identifying entities and relationships and normalizing tables to reduce redundancy.">Data Modeling</button>
+        <button type="button" class="skill-chip" aria-expanded="false" aria-controls="skill-detail"
+          data-detail="Version control for my projects, including this site: committing changes, pushing to a remote repository, and publishing with GitHub Pages.">GitHub</button>
+      </div>
+      <div class="skill-detail" id="skill-detail" aria-live="polite" hidden>
+        <h3 class="skill-detail-title"></h3>
+        <p class="skill-detail-text"></p>
       </div>
     </section>
 
@@ -146,14 +158,12 @@
       <h2>Involvement &amp; Leadership</h2>
       <div class="involvement-grid">
         <div class="involvement-card">
-          <div class="involvement-icon">&#127945;</div>
           <div class="involvement-info">
             <h4>LSU Women’s Rugby Recruitment Chair</h4>
             <p>Leadership, recruiting, and collegiate team coordination</p>
           </div>
         </div>
         <div class="involvement-card">
-          <div class="involvement-icon">&#129309;</div>
           <div class="involvement-info">
             <h4>BREC Volunteer</h4>
             <p>Community engagement and local recreational service</p>
@@ -168,6 +178,31 @@
   <footer>
     <p>&copy; 2026 Auryona Lomas. Built with semantic HTML &amp; CSS.</p>
   </footer>
+
+  <script>
+    // Skill chips: clicking one shows its details in the gold panel; clicking it again hides the panel.
+    const chips = document.querySelectorAll('.skill-chip');
+    const panel = document.getElementById('skill-detail');
+    const panelTitle = panel.querySelector('.skill-detail-title');
+    const panelText = panel.querySelector('.skill-detail-text');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const isOpen = chip.getAttribute('aria-expanded') === 'true';
+        chips.forEach(c => c.setAttribute('aria-expanded', 'false'));
+
+        if (isOpen) {
+          panel.hidden = true;
+          return;
+        }
+
+        chip.setAttribute('aria-expanded', 'true');
+        panelTitle.textContent = chip.textContent;
+        panelText.textContent = chip.dataset.detail;
+        panel.hidden = false;
+      });
+    });
+  </script>
 
 </body>
 </html>
