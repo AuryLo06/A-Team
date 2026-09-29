@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -32,7 +33,7 @@
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero" id="profile" aria-label="Profile">
       <span class="hero-tag">It's nice to meet you!</span>
       <h1 class="hero-name">Auryona<br><em>Lomas</em></h1>
       <p>
@@ -51,7 +52,7 @@
       </dl>
     </section>
 
-    <!-- "Don't click" pop-up with personal facts -->
+    <!-- "Curious?" pop-up with personal facts -->
     <dialog class="facts-dialog" id="facts-dialog" aria-labelledby="facts-title">
       <button type="button" class="facts-close" id="facts-close" aria-label="Close">&times;</button>
       <h2 class="facts-title" id="facts-title">You clicked the button. Bold choice.</h2>
@@ -63,57 +64,102 @@
       </ul>
     </dialog>
 
-    <!-- Highlights Section -->
-    <section id="highlights">
-      <h2>About & Highlights</h2>
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
       <div class="grid-cards">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Education & Focus</h3>
-            <span class="badge">LSU</span>
+            <h3 class="card-title">Data &amp; Databases</h3>
+            <span class="badge">Analytics</span>
           </div>
-          <p class="card-body">
-            Studying Information Systems &amp; Analytics with a Cyber Risk concentration and Internal Auditing minor
-            at Louisiana State University (Expected Dec 2028 | GPA: 3.02).
-          </p>
+          <p class="card-body">Designing and querying relational databases, from ERD diagrams to SQL reports.</p>
           <div class="card-tags">
-            <span class="tag">Cyber Risk</span>
-            <span class="tag">Internal Auditing</span>
-            <span class="tag">ISDS</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">ERD plus</span>
+            <span class="tag">Data Modeling</span>
+            <span class="tag">Excel</span>
           </div>
         </div>
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Technical Experience</h3>
-            <span class="badge">Enterprise Systems</span>
+            <h3 class="card-title">Development Tools</h3>
+            <span class="badge">Build</span>
           </div>
-          <p class="card-body">
-            Extensive hands-on experience as a Membership Assistant and Senior Technical Support Operator with the
-            Law Enforcement Enterprise Portal, plus hardware repair and identity management.
-          </p>
+          <p class="card-body">Writing code and managing projects, including building and publishing this site.</p>
           <div class="card-tags">
-            <span class="tag">IBM Identity Mgr</span>
-            <span class="tag">MySQL &amp; Python</span>
+            <span class="tag">Python</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Jira</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Security &amp; Identity</h3>
+            <span class="badge">Cyber Risk</span>
+          </div>
+          <p class="card-body">Managing user accounts and handling sensitive information with accuracy and confidentiality.</p>
+          <div class="card-tags">
+            <span class="tag">IBM Identity Manager</span>
             <span class="tag">Tech Support</span>
+            <span class="tag">Internal Auditing</span>
           </div>
         </div>
+      </div>
+      <p class="section-link"><a href="resume.html#skills">See details on every skill in my resume &rarr;</a></p>
+    </section>
 
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Leadership & Service</h3>
-            <span class="badge">Involvement</span>
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="summary-list">
+        <li>
+          <div>
+            <h3 class="summary-title">Membership Assistant</h3>
+            <p class="summary-org">Law Enforcement Enterprise Portal, LSU</p>
           </div>
-          <p class="card-body">
-            Previously served as the LSU Women's Rugby Recruitment Chair, and volunteer with BREC to support
-            community and collegiate initiatives.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Rugby Recruitment</span>
-            <span class="tag">BREC Volunteer</span>
-            <span class="tag">Team Leadership</span>
+          <span class="summary-date">2026 &ndash; Present</span>
+        </li>
+        <li>
+          <div>
+            <h3 class="summary-title">Senior Technical Support Operator</h3>
+            <p class="summary-org">Law Enforcement Enterprise Portal, LSU</p>
           </div>
-        </div>
+          <span class="summary-date">2024 &ndash; 2026</span>
+        </li>
+        <li>
+          <div>
+            <h3 class="summary-title">Computer Repair</h3>
+            <p class="summary-org">Self-employed</p>
+          </div>
+          <span class="summary-date">2020 &ndash; 2026</span>
+        </li>
+        <li>
+          <div>
+            <h3 class="summary-title">Intern</h3>
+            <p class="summary-org">East Baton Rouge Career and Technical Education Center</p>
+          </div>
+          <span class="summary-date">2023 &ndash; 2024</span>
+        </li>
+      </ul>
+      <p class="section-link"><a href="resume.html#experience">Read the full details in my resume &rarr;</a></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact-intro">Want to connect about an internship, a project, or cyber risk? I'd love to hear from you.</p>
+      <ul class="contact-list">
+        <li><span class="contact-label">Email</span><a href="mailto:Auryona.Lomas@outlook.com">Auryona.Lomas@outlook.com</a></li>
+        <li><span class="contact-label">GitHub</span><a href="https://github.com/AuryLo06">github.com/AuryLo06</a></li>
+        <li><span class="contact-label">Location</span><span>Baton Rouge, LA</span></li>
+      </ul>
+      <div class="btn-group">
+        <a href="mailto:Auryona.Lomas@outlook.com" class="btn btn-primary">Email Me</a>
+        <a href="resume.html" class="btn btn-secondary">View Resume</a>
       </div>
     </section>
   </main>
