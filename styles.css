@@ -1,32 +1,46 @@
 /* ==========================================================================
-   Light Professional Design System
-   Cream page, white section containers, teal accent, light blue highlights.
-   Change the Accent variables to re-theme the site.
+   Editorial LSU Design System
+   Cream page, a soft-purple feature box on the home page, LSU purple and gold accents.
+   Change the Accent / Feature variables to re-theme the site.
    ========================================================================== */
 
 :root {
-  /* Accent */
-  --accent: #1f6f73;             /* Teal for links, headings labels, active states */
-  --accent-strong: #185a5d;      /* Darker teal for hover */
-  --accent-light: #e4f1f5;       /* Light blue tint for highlights */
-  --accent-border: #bcd9e2;      /* Light blue border */
-  --on-accent: #ffffff;          /* Text on solid teal */
+  /* LSU accents */
+  --gold: #fdd023;               /* LSU gold: accent lines, primary buttons */
+  --on-gold: #2b1a4a;            /* Deep purple text on gold */
+  --accent: #5b3f8c;             /* Soft LSU purple: labels, links, active states */
+  --accent-strong: #452d70;      /* Deeper purple for hover and tag text */
+  --accent-light: #efe8f7;       /* Lavender tint for tags, selected skills, facts */
+  --accent-border: #d8cbeb;      /* Lavender border for tinted elements */
+  --on-accent: #ffffff;          /* Text on solid purple */
+
+  /* Soft-purple feature box (home page intro) */
+  --feature: #6e5a93;            /* Muted, softer LSU purple */
+  --feature-border: #5f4d82;
+  --feature-text: #f1ecf7;
+  --feature-muted: #d9cfe8;
+  --feature-gold: #ffe27a;       /* Lighter gold that stays readable on the purple */
+
+  /* Butter yellow tint (pairs with the lavender tint) */
+  --butter: #fff4c2;
+  --butter-text: #6b5210;
 
   /* Neutrals */
-  --bg: #f6f1e6;                 /* Cream page background */
+  --bg: #f6f1e6;                 /* Warm cream page background */
   --surface: #fffdf8;            /* Section containers */
   --surface-inset: #f9f5ec;      /* Cards nested inside sections */
-  --heading: #1d2b2f;            /* Headings */
-  --text: #37474a;               /* Body text */
-  --text-light: #5e6d70;         /* Secondary text */
-  --border: #e4dccb;             /* Default outline */
-  --border-light: #d2c8b2;       /* Hover/emphasis outline */
+  --heading: #231a2e;            /* Headings */
+  --text: #3f3748;               /* Body text */
+  --text-light: #6d6478;         /* Secondary text */
+  --border: #e6dcc8;             /* Default outline */
+  --border-light: #d2c6ae;       /* Hover/emphasis outline */
 
   --shadow-sm: 0 1px 3px rgba(60, 50, 30, 0.06);
   --radius: 6px;
   --radius-lg: 10px;
   --transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
   --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 *, *::before, *::after {
@@ -136,9 +150,11 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.6rem;
   margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* Section headings: small uppercase label with a hairline rule */
@@ -175,6 +191,12 @@ main > section > :last-child {
    Hero Section
    ========================================================================== */
 
+main > section.hero {
+  background: var(--feature);
+  border-color: var(--feature-border);
+  color: var(--feature-text);
+}
+
 .hero {
   padding: 3rem 2.25rem;
   display: flex;
@@ -183,9 +205,18 @@ main > section > :last-child {
   gap: 1.25rem;
 }
 
-.hero h1 {
-  font-size: 2.9rem;
+.hero-name {
+  font-size: 4.25rem;
+  line-height: 0.95;
   margin-bottom: 0;
+}
+
+.hero .hero-name {
+  color: var(--feature-text);
+}
+
+.hero-name em {
+  color: var(--gold);
 }
 
 .hero-tag {
@@ -193,14 +224,47 @@ main > section > :last-child {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent);
+  color: var(--feature-gold);
 }
 
 .hero p {
   font-size: 1.15rem;
-  color: var(--text);
-  max-width: 640px;
+  color: var(--feature-text);
+  max-width: 560px;
   margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--gold);
+}
+
+/* Stats row under the intro */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.75rem;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-stats dd {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--feature-text);
+}
+
+.hero-stats dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--feature-muted);
+  margin-top: 0.35rem;
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 /* Visually hidden but still read by screen readers and search engines */
@@ -248,9 +312,9 @@ main > section > :last-child {
   padding: 2rem 2rem 1.75rem;
   background: var(--surface);
   color: var(--text);
-  border: 3px solid var(--heading);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-lg);
-  box-shadow: 6px 6px 0 var(--heading);
+  box-shadow: 6px 6px 0 var(--feature);
 }
 
 .facts-dialog[open] {
@@ -258,7 +322,7 @@ main > section > :last-child {
 }
 
 .facts-dialog::backdrop {
-  background: rgba(29, 43, 47, 0.45);
+  background: rgba(35, 26, 46, 0.45);
 }
 
 @keyframes facts-pop {
@@ -284,7 +348,9 @@ main > section > :last-child {
 
 /* Reset the section-heading label style for the pop-up title */
 .facts-title {
-  font-size: 1.35rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5rem;
   text-transform: none;
   letter-spacing: normal;
   color: var(--heading);
@@ -335,15 +401,15 @@ main > section > :last-child {
 
 /* Primary button: solid accent */
 .btn-primary {
-  background-color: var(--accent);
-  color: var(--on-accent);
-  border-color: var(--accent);
+  background-color: var(--gold);
+  color: var(--on-gold);
+  border-color: var(--gold);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-strong);
-  border-color: var(--accent-strong);
-  color: var(--on-accent);
+  background-color: var(--feature-gold);
+  border-color: var(--feature-gold);
+  color: var(--on-gold);
 }
 
 /* Secondary button: outline */
@@ -356,6 +422,16 @@ main > section > :last-child {
 .btn-secondary:hover {
   border-color: var(--text-light);
   background-color: var(--surface-inset);
+}
+
+.hero .btn-secondary {
+  color: var(--feature-text);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.hero .btn-secondary:hover {
+  border-color: var(--feature-text);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
@@ -391,7 +467,9 @@ main > section > :last-child {
 }
 
 .card-title {
-  font-size: 1.15rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.3rem;
   color: var(--heading);
   text-transform: none;
   letter-spacing: normal;
@@ -713,61 +791,398 @@ footer {
 }
 
 /* ==========================================================================
+   Sticker Style
+   Bold outlines with solid purple and gold offset shadows, alternating.
+   ========================================================================== */
+
+main > section {
+  border: 2px solid var(--heading);
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 var(--gold);
+  margin-bottom: 2rem;
+}
+
+main > section:nth-of-type(even) {
+  box-shadow: 6px 6px 0 var(--feature);
+}
+
+main > section.hero {
+  border-color: var(--heading);
+  box-shadow: 6px 6px 0 var(--gold);
+}
+
+/* Section labels get a short gold bar instead of a full rule */
+h2 {
+  position: relative;
+  border-bottom: none;
+  padding-bottom: 0.6rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+
+.card-title::after,
+.facts-title::after {
+  content: none;
+}
+
+/* Cards inside sections */
+.card,
+.involvement-card {
+  background: var(--surface);
+  border: 2px solid var(--heading);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--gold);
+}
+
+.grid-cards > :nth-child(even),
+.involvement-grid > :nth-child(even) {
+  box-shadow: 4px 4px 0 var(--feature);
+}
+
+.card:hover {
+  border-color: var(--heading);
+}
+
+/* Pill tags, alternating lavender and butter */
+.tag {
+  background: var(--accent-light);
+  color: var(--accent-strong);
+  border: 1.5px solid var(--heading);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.card-tags .tag:nth-child(even) {
+  background: var(--butter);
+  color: var(--butter-text);
+}
+
+/* Buttons: sticker shadow that presses in on click */
+.btn,
+.no-btn {
+  border: 2px solid var(--heading);
+  box-shadow: 3px 3px 0 var(--heading);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-secondary,
+.btn-secondary:hover,
+.no-btn:hover {
+  border-color: var(--heading);
+}
+
+.btn:hover,
+.no-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--heading);
+}
+
+.btn:active,
+.no-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--heading);
+}
+
+.hero .btn-secondary,
+.hero .btn-secondary:hover {
+  border-color: var(--heading);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.no-btn {
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+}
+
+/* Skills */
+.skill-chip {
+  border: 1.5px solid var(--heading);
+  border-radius: 999px;
+}
+
+.skill-chip:hover {
+  border-color: var(--heading);
+}
+
+.skill-chip[aria-expanded="true"] {
+  border-color: var(--heading);
+  box-shadow: 2px 2px 0 var(--gold);
+}
+
+.skill-detail {
+  background: var(--accent-light);
+  border: 2px solid var(--heading);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--gold);
+}
+
+/* "Curious?" pop-up */
+.facts-dialog {
+  border: 2px solid var(--heading);
+}
+
+.facts-list li {
+  border: 1.5px solid var(--heading);
+}
+
+.facts-list li:nth-child(even) {
+  background: var(--butter);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .no-btn {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
    Print Styles (Optimized Clean Export)
    ========================================================================== */
 
 @media print {
-  .skills-hint, .skill-detail {
-    display: none !important;
+  @page {
+    size: letter;
+    margin: 0.5in 0.6in;
   }
 
-  header, footer, .resume-actions, .no-print {
-    display: none !important;
-  }
-
-  body, html {
+  html, body {
     background: #ffffff !important;
-    color: #111111 !important;
+    color: #1a1a1a !important;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  * {
+    box-shadow: none !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Only the resume content prints */
+  header, footer, .no-print, .resume-actions, .skills-hint, .skill-detail {
+    display: none !important;
   }
 
   main {
     padding: 0 !important;
-    max-width: 100% !important;
+    max-width: none !important;
   }
 
-  main > section, .resume-header-card, .education-card, .involvement-card, .card {
-    background: transparent !important;
+  main > section {
+    background: none !important;
     border: none !important;
+    border-radius: 0 !important;
     padding: 0 !important;
-    margin-bottom: 1.5rem !important;
+    margin: 0 0 12pt !important;
   }
 
-  h1, h2, h3, h4, .timeline-title {
-    color: #000000 !important;
+  /* Header: centered name, one contact line */
+  .resume-header-card {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 10pt !important;
   }
 
-  h2 {
-    color: #000000 !important;
-    border-bottom-color: #cccccc !important;
+  .resume-profile-info h1 {
+    font-size: 25pt !important;
+    color: #231a2e !important;
+    margin: 0 0 2pt !important;
   }
 
-  .timeline-subtitle, .timeline-date, .resume-contact-item, .education-school,
-  .education-minor, .badge-gpa, .involvement-info p {
+  .resume-profile-tagline {
+    font-size: 10pt !important;
+    color: #333333 !important;
+    margin: 0 0 3pt !important;
+  }
+
+  .resume-contact-bar {
+    justify-content: center;
+    gap: 0 !important;
+  }
+
+  .resume-contact-item {
+    font-size: 10pt !important;
     color: #333333 !important;
   }
 
+  .resume-contact-item + .resume-contact-item::before {
+    content: "|";
+    margin: 0 6pt;
+    color: #999999;
+  }
+
+  /* Section headings: purple label with a thin rule */
+  h2 {
+    font-family: var(--font-family);
+    font-size: 11pt !important;
+    letter-spacing: 0.08em;
+    color: #461d7c !important;
+    border-bottom: 1px solid #b9b0c9 !important;
+    padding-bottom: 2pt !important;
+    margin-bottom: 5pt !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  h2::after {
+    display: none !important;
+  }
+
+  h3, h4, .timeline-title {
+    color: #1a1a1a !important;
+  }
+
+  /* Education: degree on the left, dates and GPA on the right */
+  .education-card {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start !important;
+    gap: 12pt !important;
+  }
+
+  .education-main h3 {
+    font-size: 11pt !important;
+    margin: 0 !important;
+  }
+
+  .education-school, .education-minor {
+    font-size: 10pt !important;
+    color: #333333 !important;
+    margin: 0 !important;
+  }
+
+  .education-meta {
+    align-items: flex-end !important;
+    gap: 0 !important;
+  }
+
+  .education-meta .timeline-date, .badge-gpa {
+    font-size: 10pt !important;
+    color: #333333 !important;
+  }
+
+  /* Experience: title left, dates right, tight bullets */
+  .timeline-item {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    break-inside: avoid;
+  }
+
+  .timeline-item + .timeline-item {
+    margin-top: 8pt !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+  }
+
+  .timeline-item .timeline-date {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+    font-size: 10pt !important;
+    color: #333333 !important;
+  }
+
+  .timeline-title {
+    font-size: 11pt !important;
+    margin: 0 !important;
+  }
+
+  .timeline-subtitle {
+    font-size: 10pt !important;
+    font-style: italic;
+    font-weight: 400 !important;
+    color: #444444 !important;
+  }
+
+  .resume-list {
+    margin-top: 2pt !important;
+    gap: 0 !important;
+  }
+
   .resume-list li {
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    padding-left: 10pt !important;
     color: #222222 !important;
   }
 
   .resume-list li::before {
-    background: #000000 !important;
+    content: "•";
+    width: auto;
+    height: auto;
+    top: 0;
+    background: none !important;
+    color: #1a1a1a;
+  }
+
+  /* Skills: one comma-separated line */
+  .skills-list {
+    display: block !important;
   }
 
   .skill-chip {
-    background: #ffffff !important;
-    color: #111111 !important;
-    border: 1px solid #cccccc !important;
+    display: inline !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    font-size: 10pt !important;
+    font-weight: 400 !important;
+    color: #222222 !important;
+  }
+
+  .skill-chip:not(:last-child)::after {
+    content: ", ";
+  }
+
+  /* Involvement: one bulleted line each */
+  .involvement-grid {
+    display: block !important;
+  }
+
+  .involvement-card {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 0 0 10pt !important;
+    margin: 0 0 1pt !important;
+    position: relative;
+    break-inside: avoid;
+  }
+
+  .involvement-card::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 10pt;
+  }
+
+  .involvement-info h4, .involvement-info p {
+    display: inline;
+    font-size: 10pt !important;
+    color: #222222 !important;
+  }
+
+  .involvement-info h4 {
+    font-weight: 600;
+  }
+
+  .involvement-info p::before {
+    content: " – ";
   }
 }
 
@@ -789,8 +1204,20 @@ footer {
     padding: 1.5rem 1.25rem;
   }
 
-  h1, .hero h1, .resume-profile-info h1 {
+  h1, .resume-profile-info h1 {
     font-size: 2rem;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+  }
+
+  .hero-stats {
+    gap: 1rem 1.5rem;
+  }
+
+  .hero-stats dd {
+    font-size: 1.6rem;
   }
 
   .timeline-item {
