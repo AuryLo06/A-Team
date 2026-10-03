@@ -1336,3 +1336,8 @@ h2::after {
     flex-direction: column;
   }
 }
+
+/* Project card links */
+.card-links {
+  margin-top: 1.25rem;
+}
